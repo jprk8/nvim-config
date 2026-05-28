@@ -4,7 +4,7 @@ vim.pack.add({
 
 require("render-markdown").setup({
     code = {
-        -- sign = false,
+        sign = false,
         width = "block",
         right_pad = 1,
     },
