@@ -13,7 +13,7 @@ require("snacks").setup({
       {
         text = {
           { "󰏖  " .. plugins .. " total plugins\n\n", hl = "@parameter" },
-          { "⚡ powered by vim.pack\n\n", hl = "Normal" },
+          { "⚡ by vim.pack\n\n", hl = "Normal" },
           { "󰋑", hl = "Error" },
         },
         align = "center",

@@ -1,5 +1,5 @@
 vim.pack.add({
-    "https://github.com/akinsho/bufferline.nvim"
+  "https://github.com/akinsho/bufferline.nvim"
 })
 
 local icons = {
@@ -7,8 +7,49 @@ local icons = {
   Warn = " ",
 }
 
-require("bufferline").setup({
+local bufferline = require("bufferline")
+
+bufferline.setup({
+  highlights = {
+    fill = { bg = "NONE" },
+    background = { bg = "NONE" },
+    tab = { bg = "NONE" },
+    tab_selected = { bg = "NONE" },
+    tab_separator = { bg = "NONE" },
+    tab_separator_selected = { bg = "NONE" },
+    buffer_selected = { bg = "NONE" },
+    buffer_visible = { bg = "NONE" },
+    tab_close = { bg = "NONE" },
+    close_button = { bg = "NONE" },
+    close_button_visible = { bg = "NONE" },
+    close_button_selected = { bg = "NONE" },
+    separator = { fg = "#363738", bg = "NONE" },
+    separator_visible = { bg = "NONE" },
+    separator_selected = { bg = "NONE" },
+
+    diagnostic = { bg = "NONE" },
+    diagnostic_visible = { bg = "NONE" },
+    diagnostic_selected = { bg = "NONE" },
+    error = { bg = "NONE" },
+    error_visible = { bg = "NONE" },
+    error_selected = { bg = "NONE" },
+    error_diagnostic = { bg = "NONE" },
+    error_diagnostic_visible = { bg = "NONE" },
+    error_diagnostic_selected = { bg = "NONE" },
+    warning = { bg = "NONE" },
+    warning_visible = { bg = "NONE" },
+    warning_selected = { bg = "NONE" },
+    warning_diagnostic = { bg = "NONE" },
+    warning_diagnostic_visible = { bg = "NONE" },
+    warning_diagnostic_selected = { bg = "NONE" },
+
+    -- indicator_visible = { bg = "NONE" },
+    -- indicator_selected = { bg = "NONE" },
+    offset_separator = { bg = "NONE" },
+  },
+
   options = {
+    style_preset = bufferline.style_preset.minimal,
     -- use Snacks for safe buffer deletion
     close_command = function(n)
       Snacks.bufdelete(n)
@@ -23,7 +64,7 @@ require("bufferline").setup({
 
     diagnostics_indicator = function(_, _, diag)
       local ret = (diag.error and icons.Error .. diag.error .. " " or "")
-        .. (diag.warning and icons.Warn .. diag.warning or "")
+      .. (diag.warning and icons.Warn .. diag.warning or "")
       return vim.trim(ret)
     end,
 
@@ -31,9 +72,9 @@ require("bufferline").setup({
     offsets = {
       {
         filetype = "snacks_layout_box",
-        text = "Explorer",
-        highlight = "Directory",
+        -- highlight = "Directory",
         text_align = "left",
+        separator = true,
       },
     },
   },
