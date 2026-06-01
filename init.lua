@@ -89,8 +89,7 @@ end, { desc = 'Print the git blame for the current line' })
 
 -- Install third-party plugins via "vim.pack.add()".
 vim.pack.add({
-    -- Quickstart configs for LSP
-    'https://github.com/neovim/nvim-lspconfig',
+    -- Default packages
     -- Fuzzy picker
     'https://github.com/ibhagwan/fzf-lua',
     -- Autocompletion
@@ -99,7 +98,7 @@ vim.pack.add({
     'https://github.com/stevearc/quicker.nvim',
     -- Git integration
     'https://github.com/lewis6991/gitsigns.nvim',
-    -- my packages (dependencies)
+    -- My packages
     -- mini.icons
     'https://github.com/nvim-mini/mini.icons',
     -- nvim-treesitter
@@ -112,18 +111,19 @@ require('mini.completion').setup {}
 require('quicker').setup {}
 require('gitsigns').setup {}
 
+-- Load Config
+require('config.keymaps')
+require('config.options')
+
 -- Load Plugins
-require('plugins.colorscheme')
+require('plugins.lsp')
 require('plugins.snacks')
 require('plugins.bufferline')
 require('plugins.which-key')
 require('plugins.render-markdown')
 require('plugins.lualine')
+require('plugins.colorscheme')
 
--- Load Config
-require('config.keymaps')
-require('config.options')
-
--- Dependencies
+-- Etc
 require('mini.icons').setup()
 MiniIcons.mock_nvim_web_devicons()
