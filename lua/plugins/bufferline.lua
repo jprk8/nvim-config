@@ -23,7 +23,7 @@ bufferline.setup({
     close_button = { bg = "NONE" },
     close_button_visible = { bg = "NONE" },
     close_button_selected = { bg = "NONE" },
-    separator = { fg = "#363738", bg = "NONE" },
+    separator = { bg = "NONE" },
     separator_visible = { bg = "NONE" },
     separator_selected = { bg = "NONE" },
 
@@ -43,13 +43,10 @@ bufferline.setup({
     warning_diagnostic_visible = { bg = "NONE" },
     warning_diagnostic_selected = { bg = "NONE" },
 
-    -- indicator_visible = { bg = "NONE" },
-    -- indicator_selected = { bg = "NONE" },
-    offset_separator = { bg = "NONE" },
+    offset_separator = { fg = "#6e6a86", bg = "NONE" },
   },
 
   options = {
-    style_preset = bufferline.style_preset.minimal,
     -- use Snacks for safe buffer deletion
     close_command = function(n)
       Snacks.bufdelete(n)
@@ -68,12 +65,11 @@ bufferline.setup({
       return vim.trim(ret)
     end,
 
-    -- remove neo-tree, keep snacks explorer
+    separator_style = { "", "" },
+
     offsets = {
       {
         filetype = "snacks_layout_box",
-        -- highlight = "Directory",
-        text_align = "left",
         separator = true,
       },
     },
