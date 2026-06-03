@@ -23,7 +23,7 @@ bufferline.setup({
     close_button = { bg = "NONE" },
     close_button_visible = { bg = "NONE" },
     close_button_selected = { bg = "NONE" },
-    separator = { bg = "NONE" },
+    separator = { fg = "#6e6a86", bg = "NONE" },
     separator_visible = { bg = "NONE" },
     separator_selected = { bg = "NONE" },
 
@@ -65,7 +65,7 @@ bufferline.setup({
       return vim.trim(ret)
     end,
 
-    separator_style = { "", "" },
+    -- separator_style = { "", "" },
 
     offsets = {
       {

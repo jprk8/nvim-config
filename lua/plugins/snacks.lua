@@ -23,7 +23,13 @@ require("snacks").setup({
   },
   bigfile = { enabled = true },
   quickfile = { enabled = true },
-  terminal = { enabled = true },
+  terminal = {
+    win = {
+      keys = {
+        hide_slash = { "<C-/>", "hide", desc = "Hide Terminal", mode = "t" },
+      },
+    },
+  },
 })
 
 -- Disable mini.completion during explorer search/filter
