@@ -27,6 +27,7 @@ require("snacks").setup({
     win = {
       keys = {
         hide_slash = { "<C-/>", "hide", desc = "Hide Terminal", mode = "t" },
+        hide_underscore = { "<C-_>", "hide", desc = "Hide Terminal", mode = "t" },
       },
     },
   },
